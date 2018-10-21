@@ -1,0 +1,99 @@
+/* 导航样式 */
+.nav-links {
+  width: 100%;
+}
+.nav-links ul {
+  width: 100%;
+  padding: 10px;
+}
+.nav-links ul li {
+  width: 33.33%;
+  float: left;
+}
+.nav-links ul li a {
+  display: block;
+  width: 100%;
+}
+.nav-links ul li a img {
+  width: 100%;
+  display: block;
+}
+/* 品牌专区样式 */
+.brand {
+  width: 100%;
+  padding: 10px;
+}
+.brand > img {
+  width: 100%;
+  display: block;
+}
+.brand > ul li {
+  width: 25%;
+  float: left;
+}
+.brand > ul li a {
+  width: 100%;
+  display: block;
+}
+.brand > ul li a img {
+  width: 100%;
+  display: block;
+}
+/* 产品块样式 */
+.product {
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.product > img {
+  width: 100%;
+  display: block;
+}
+.product > ul {
+  margin-top: 10px;
+}
+.product > ul li {
+  width: 50%;
+  float: left;
+  padding: 5px;
+}
+.product > ul li a {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  box-shadow: 0 0 5px #cccccc;
+}
+.product > ul li a img {
+  width: 100%;
+  display: block;
+}
+.product > ul li a .product-name {
+  display: block;
+  height: 45px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #8f8f94;
+  line-height: 18px;
+  padding: 5px;
+}
+.product > ul li a p {
+  text-align: center;
+}
+.product > ul li a p span {
+  font-size: 12px;
+  padding: 0 3px;
+}
+.product > ul li a p .price-now {
+  color: #e92322;
+}
+.product > ul li a p .price-before {
+  color: #8f8f94;
+}
+.product > ul li a .buy-now {
+  display: block;
+  background-color: darkviolet;
+  color: #ffffff;
+  margin: 0 auto;
+  border: none;
+  margin-bottom: 10px;
+}
