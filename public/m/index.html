@@ -12,6 +12,7 @@
 	<script src="assets/mui/js/mui.min.js"></script>
 	<script src="./assets/zepto/zepto.min.js"></script>
 	<script src="./js/index.js"></script>
+
 </head>
 
 <body>
@@ -250,5 +251,10 @@
 		</div>
 	</div>
 </body>
+<script>
+	mui('body').on('tap', 'a', function () {
+		window.top.location.href = this.href;
+	});
+</script>
 
 </html>

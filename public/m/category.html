@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/category.css">
 	<script src="assets/mui/js/mui.min.js"></script>
 	<script src="./assets/zepto/zepto.min.js"></script>
+	<script src="./assets/artTemplate/template-web.js"></script>
 	<script src="./js/category.js"></script>
 </head>
 
@@ -23,11 +24,11 @@
 	</header>
 	<!-- 底部 -->
 	<nav class="mui-bar mui-bar-tab footer">
-		<a class="mui-tab-item mui-active" href="index.html">
+		<a class="mui-tab-item" href="index.html">
 			<span class="mui-icon mui-icon-home"></span>
 			<span class="mui-tab-label">首页</span>
 		</a>
-		<a class="mui-tab-item" href="category.html">
+		<a class="mui-tab-item mui-active" href="category.html">
 			<span class="mui-icon mui-icon-bars"></span>
 			<span class="mui-tab-label">分类</span>
 		</a>
@@ -45,100 +46,69 @@
 		<div class="category-left">
 			<div class="mui-scroll-wrapper">
 				<div class="mui-scroll">
-					<!--这里放置真实显示的DOM内容-->
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					
+					<ul class="category-first">
+						<!-- <li class="active">
+							<a href="javascript:;">运动馆</a>
+						</li>
+						<li>
+							<a href="javascript:;">男人馆</a>
+						</li> -->
+					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="category-right">
 			<div class="mui-scroll-wrapper">
 				<div class="mui-scroll">
-					<!--这里放置真实显示的DOM内容-->
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					123 <br>
-					
+					<ul class="mui-clearfix category-second">
+						<!-- <li>
+							<a href="javascript:;">
+								<img src="./images/brand1.png" alt="">
+								<p>耐克</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="./images/brand1.png" alt="">
+								<p>耐克</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="./images/brand1.png" alt="">
+								<p>耐克</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="./images/brand1.png" alt="">
+								<p>耐克</p>
+							</a>
+						</li> -->
+
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+<script type="text/template" id="leftListTPL">
+	{{each rows}}
+	<li data-id="{{$value.id}}">
+		<a href="javascript:;">{{$value.categoryName}}</a>
+	</li>
+	{{/each}}
+</script>
+<!-- 二级分类模板 -->
+<script type="text/template" id="rightListTPL">
+	{{each rows}}
+	<li>
+		<a href="javascript:;">
+			<img src="{{$value.brandLogo}}" alt="">
+			<p>{{$value.brandName}}</p>
+		</a>
+	</li>
+	{{/each}}
+</script>
 
 </html>
