@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>嗨购--让购物更开心</title>
@@ -8,10 +9,13 @@
 	<link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./css/base.css">
 	<script src="assets/mui/js/mui.min.js"></script>
+
 </head>
+
 <body>
 	<!-- 头部 -->
 	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		<h1 class="mui-title">嗨购</h1>
 		<a href="javascript:;" class="mui-icon mui-icon-search mui-pull-right"></a>
 	</header>
@@ -39,4 +43,10 @@
 
 	</div>
 </body>
+<script>
+	mui('body').on('tap', 'a', function () {
+		window.top.location.href = this.href;
+	});
+</script>
+
 </html>

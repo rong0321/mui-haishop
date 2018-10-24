@@ -1,21 +1,79 @@
-.my-content{
-    position: absolute;
-    left: 0;
-    top: 44px;
-    right: 0;
-    bottom: 50px;
-    overflow: hidden;
-    .category-left{
-        width: 80px;
-        height: 100%;
-        background-color: skyblue;
-        float: left;
-        position: relative;
+.my-content {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  right: 0;
+  bottom: 50px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  .category-left {
+    width: 80px;
+    height: 100%;
+    background-color: #ffffff;
+    float: left;
+    position: relative;
+    ul {
+      width: 100%;
+      li {
+        width: 100%;
+        height: 45px;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: 45px;
+          font-size: 14px;
+          border-bottom: 1px solid #e0e0e0;
+          border-right: 1px solid #e0e0e0;
+          color: #000000;
+        }
+        &.active {
+          background-color: #f5f5f5;
+        }
+        &.active a {
+          border-right: 1px solid transparent;
+        }
+      }
     }
-    .category-right{
-        margin-left: 90px;
-        background-color: pink;
-        height: 100%;
-        position: relative;
+  }
+  .category-right {
+    margin-left: 90px;
+    // background-color: #ffffff;
+    height: 100%;
+    position: relative;
+    .mui-scroll {
+      padding-top: 10px;
+      ul {
+        width: 100%;
+        background-color: #fff;
+        li {
+          width: 33.33%;
+          float: left;
+          a {
+            width: 100%;
+            display: block;
+            img {
+              width: 100%;
+              display: block;
+            }
+            p {
+              text-align: center;
+              font-size: 12px;
+            }
+          }
+          >p{
+            padding: 0;
+            padding-left: 10px;
+            margin: 0;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: red;
+          }
+        }
+      }
     }
+  }
 }
