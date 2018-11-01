@@ -1,0 +1,40 @@
+@baseColor: darkviolet;
+
+.mui-input-group {
+  input {
+    font-size: 14px;
+  }
+  &::after {
+    width: 0;
+    height: 0;
+  }
+  .vcodeBox {
+    position: relative;
+    .vcode {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: @baseColor;
+      font-size: 12px;
+    }
+  }
+  .mui-button-row {
+      padding: 0 10px;
+    .register {
+      margin-top: 20px;
+      line-height: 26px;
+      width: 100%;
+      background-color: @baseColor;
+      border: 1px solid @baseColor;
+    }
+  }
+}
+
+.login{
+    margin-top: 30px;
+    padding: 10px;
+    text-align: right;
+    a{
+        color: @baseColor;
+    }
+}

@@ -1,0 +1,64 @@
+.mui-slider-item img {
+  width: 100%;
+  display: block;
+}
+.title {
+  padding: 10px;
+}
+.price {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.price span {
+  font-size: 24px;
+  color: red;
+  margin: 5px;
+}
+.price del {
+  color: #ddd;
+  font-size: 14px;
+}
+.size {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.size span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  line-height: 28px;
+  text-align: center;
+}
+.size span.active {
+  background-color: #fa672d;
+  color: #ffffff;
+}
+.summary {
+  padding: 10px;
+}
+.summary .mui-numbox {
+  margin: 0 5px;
+}
+.cart {
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  color: #ffffff;
+}
+.cart a {
+  flex: 1;
+  height: 34px;
+  line-height: 34px;
+  background-color: pink;
+  color: #ffffff;
+}
+.cart span {
+  flex: 1;
+  height: 34px;
+  line-height: 34px;
+  background-color: green;
+}
