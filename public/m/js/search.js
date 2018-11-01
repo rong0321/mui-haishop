@@ -19,6 +19,8 @@ $(function () {
             localStorage.setItem('keywords',JSON.stringify([keyword]));
         }
 
+        // console.log(localStorage.getItem('keywords'));
+        
         location.href = 'searchResult.html?keyword='+keyword;
         // 让搜索框清空,提升用户体验.
         $('.searchText').val('');

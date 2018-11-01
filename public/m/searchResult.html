@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./css/searchResult.css">
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="assets/fastclick/fastclick.js"></script>
+    
+    <script src="./js/searchResult.js"></script>
 
 </head>
 
@@ -41,58 +45,60 @@
         </a>
     </nav>
     <!-- 内容 -->
-    <div class="mui-content">
-        <div class="filter">
-            <div class="price">价格&nbsp;<span class="mui-icon mui-icon-arrowdown"></span></div>
-            <div class="summary">销量&nbsp;<span class="mui-icon mui-icon-arrowdown"></span></div>
-        </div>
-        <div class="product">
-            <ul class="mui-clearfix">
-                <li>
-                    <a href="javascript:;">
-                        <img src="./images/product.jpg" alt="">
-                        <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span class="price-now">¥560.00</span>
-                            <span class="price-before"><del>¥1388.00</del></span>
-                        </p>
-                        <button class="buy-now">立即购买</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="./images/product.jpg" alt="">
-                        <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span class="price-now">¥560.00</span>
-                            <span class="price-before"><del>¥1488.00</del></span>
-                        </p>
-                        <button class="buy-now">立即购买</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="./images/product.jpg" alt="">
-                        <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span class="price-now">¥560.00</span>
-                            <span class="price-before"><del>¥788.00</del></span>
-                        </p>
-                        <button class="buy-now">立即购买</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="./images/product.jpg" alt="">
-                        <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
-                        <p>
-                            <span class="price-now">¥560.00</span>
-                            <span class="price-before"><del>¥888.00</del></span>
-                        </p>
-                        <button class="buy-now">立即购买</button>
-                    </a>
-                </li>
-            </ul>
+    <div  id="refreshContainer">
+        <div>
+            <div class="filter">
+                <div class="price">价格&nbsp;<span class="mui-icon mui-icon-arrowdown"></span></div>
+                <div class="summary">销量&nbsp;<span class="mui-icon mui-icon-arrowdown"></span></div>
+            </div>
+            <div class="product">
+                <ul class="mui-clearfix searchPro">
+                    <!-- <li>
+                        <a href="javascript:;">
+                            <img src="./images/product.jpg" alt="">
+                            <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
+                            <p>
+                                <span class="price-now">¥560.00</span>
+                                <span class="price-before"><del>¥1388.00</del></span>
+                            </p>
+                            <button class="buy-now">立即购买</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./images/product.jpg" alt="">
+                            <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
+                            <p>
+                                <span class="price-now">¥560.00</span>
+                                <span class="price-before"><del>¥1488.00</del></span>
+                            </p>
+                            <button class="buy-now">立即购买</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./images/product.jpg" alt="">
+                            <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
+                            <p>
+                                <span class="price-now">¥560.00</span>
+                                <span class="price-before"><del>¥788.00</del></span>
+                            </p>
+                            <button class="buy-now">立即购买</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./images/product.jpg" alt="">
+                            <span class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</span>
+                            <p>
+                                <span class="price-now">¥560.00</span>
+                                <span class="price-before"><del>¥888.00</del></span>
+                            </p>
+                            <button class="buy-now">立即购买</button>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
         </div>
     </div>
 </body>
@@ -100,6 +106,22 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
+</script>
+<script type="text/template" id="productTPL">
+    {{each data}}
+    <li>
+        <a href="productDetail.html?id={{$value.id}}">
+            <img src="{{$value.pic[0].picAddr}}" alt="">
+            <span class="product-name">{{$value.proName}}</span>
+            <p>
+                <span class="price-now">¥{{$value.price}}</span>
+                <span class="price-before"><del>¥{{$value.oldPrice}}</del></span>
+            </p>
+            <button class="buy-now">立即购买</button>
+        </a>
+    </li>
+    {{/each}}
+
 </script>
 
 </html>

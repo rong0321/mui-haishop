@@ -1,0 +1,35 @@
+.mui-input-group input {
+  font-size: 14px;
+}
+.mui-input-group::after {
+  width: 0;
+  height: 0;
+}
+.mui-input-group .vcodeBox {
+  position: relative;
+}
+.mui-input-group .vcodeBox .vcode {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: darkviolet;
+  font-size: 12px;
+}
+.mui-input-group .mui-button-row {
+  padding: 0 10px;
+}
+.mui-input-group .mui-button-row .register {
+  margin-top: 20px;
+  line-height: 26px;
+  width: 100%;
+  background-color: darkviolet;
+  border: 1px solid darkviolet;
+}
+.login {
+  margin-top: 30px;
+  padding: 10px;
+  text-align: right;
+}
+.login a {
+  color: darkviolet;
+}
