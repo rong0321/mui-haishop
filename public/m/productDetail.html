@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/productDetail.css">
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/productDetail.js"></script>
 
 </head>
@@ -43,62 +45,7 @@
     </nav>
     <!-- 内容 -->
     <div class="mui-content">
-        <!-- 轮播图 -->
-        <div class="mui-slider">
-            <div class="mui-slider-group">
-                <div class="mui-slider-item"><img src="./images/banner1.png" /></div>
-                <div class="mui-slider-item"><img src="./images/banner2.png" /></div>
-                <div class="mui-slider-item"><img src="./images/banner3.png" /></div>
-                <div class="mui-slider-item"><img src="./images/banner4.png" /></div>
-            </div>
-        </div>
-        <!-- 标题 -->
-        <div class="title">
-			【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋
-        </div>
-        <div class="price">
-            价格: <span>¥112</span>  <del>¥342</del>
-        </div>
-        <!-- 尺码 -->
-        <div class="size">
-            尺码: <span class="active">35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-            <span>35</span>
-        </div>
-        <!-- 数量 -->
-        <div class="summary">
-            数量: <div class="mui-numbox" data-numbox-min='1' data-numbox-max='44'>
-                    <!-- "-"按钮，点击可减小当前数值 -->
-                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
-                    <input class="mui-numbox-input" type="number" />
-                    <!-- "+"按钮，点击可增大当前数值 -->
-                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
-                  </div>
-                  剩余: <i>44</i>件
-        </div>
-        <!-- 加购 -->
-        <div class="cart">
-            <a href="cart.html">查看购物车</a>
-            <span>加入购物车</span>
-        </div>
+        
     </div>
 </body>
 <script>
@@ -106,5 +53,45 @@
         window.top.location.href = this.href;
     });
 </script>
+<script type="text/template" id="detailTpl">
+    <!-- 轮播图 -->
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            {{each pic}}
+            <div class="mui-slider-item"><img src="{{$value.picAddr}}" /></div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- 标题 -->
+    <div class="title">
+        {{proName}}
+    </div>
+    <div class="price">
+        价格: <span>¥{{price}}</span>  <del>¥{{oldPrice}}</del>
+    </div>
+    <!-- 尺码 -->
+    <div class="size">
+        尺码: 
+        {{each size}}
+        <span class="sizeBtn">{{$value}}</span>
+        {{ /each }}
+    </div>
+    <!-- 数量 -->
+    <div class="summary">
+        数量: <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{num}}'>
+                <!-- "-"按钮，点击可减小当前数值 -->
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number" value="1"/>
+                <!-- "+"按钮，点击可增大当前数值 -->
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+              </div>
+              剩余: <i>{{num}}</i>件
+    </div>
+    <!-- 加购 -->
+    <div class="cart">
+        <a href="cart.html">查看购物车</a>
+        <span id="addCart" data-id="{{id}}">加入购物车</span>
+    </div>
 
+</script>
 </html>

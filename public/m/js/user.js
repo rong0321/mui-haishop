@@ -41,6 +41,7 @@ $(function(){
                         if(res.success){
                             
                             mui.toast('退出成功');
+                            localStorage.removeItem('returnUrl');
         
                             setTimeout(() => {
                                 location.href = 'index.html';
