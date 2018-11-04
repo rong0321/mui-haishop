@@ -33,7 +33,7 @@ $(function () {
     // 渲染本地储存里的数据
     var editAddress = JSON.parse(localStorage.getItem('editAddress'));
     // console.log(editAddress);
-    var id = editAddress.id;
+    var id = isEdit ? editAddress.id : null;
     // console.log(id);
     
     // 如果是添加操作则让该数据变为空对象

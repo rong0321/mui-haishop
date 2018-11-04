@@ -1,22 +1,25 @@
 // 判断用户登录情况
-$.ajax({
-    url:'/user/queryUserMessage',
-    type:'get',
-    // 此处为防止加载剩余页面,应改为同步请求
-    async:false,
-    success:function(res){
-        // console.log(res);
-        if(res.error && res.error == 400){
-            location.href = 'login.html';
-        }
-        if(!res.error){
-            userInfo = res;
-            // console.log(userInfo);
+function judgeLogin(){
+    $.ajax({
+        url:'/user/queryUserMessage',
+        type:'get',
+        // 此处为防止加载剩余页面,应改为同步请求
+        async:false,
+        success:function(res){
+            // console.log(res);
+            if(res.error && res.error == 400){
+                location.href = 'login.html';
+                return;
+            }
+            if(!res.error){
+                userInfo = res;
+                // console.log(userInfo);
+                
+            }
             
         }
-        
-    }
-})
+    })
+}
 
 
 function getParamsByUrl(url, name) {

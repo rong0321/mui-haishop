@@ -35,7 +35,12 @@ $(function () {
 
                     setTimeout(() => {
                         $('#login-btn').html('登录');
-                        location.href = 'user.html';
+                        if(localStorage.getItem('returnUrl')){
+                            location.href = localStorage.getItem('returnUrl')
+                            localStorage.removeItem('returnUrl')
+                        }else{
+                            location.href = 'user.html';
+                        }
                     }, 1000);
 
                 } else {
